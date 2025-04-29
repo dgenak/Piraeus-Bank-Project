@@ -1,0 +1,142 @@
+:root {
+    --blue: #00205B;
+    --yellow: #F9E400;
+    --gray-light: #f4f6f8;
+    --gray-medium: #ccd6dd;
+    --text-dark: #333333;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    background-color: var(--gray-light);
+    color: var(--blue);
+    margin: 0;
+    padding: 30px;
+    line-height: 1.6;
+    overflow: auto;
+  }
+  
+  h1 {
+    font-size: 22px;
+    color: var(--blue);
+    margin-bottom: 10px;
+  }
+  
+  h2 {
+    font-size: 18px;
+    color: var(--blue);
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+  
+  /* Table styling */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+  }
+  
+  th {
+    background-color: var(--yellow);
+    color: var(--blue);
+    font-weight: bold;
+  }
+  
+  tr:hover {
+    background-color: #fff9cc;
+  }
+  
+  /* Textareas */
+  textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    margin-bottom: 10px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Buttons */
+  button {
+    background-color: var(--blue);
+    color: var(--yellow);
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #001744;
+  }
+  
+  /* Feedback items */
+  #feedback-container {
+    margin-top: 10px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-left: 4px solid #FFD200;
+    border-radius: 4px;
+  }
+  
+  .feedback-item {
+    background-color: #fff9da;
+    padding: 8px;
+    margin-bottom: 6px;
+    border-radius: 4px;
+    font-style: italic;
+  }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal-content {
+    background-color: #ffffff;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid var(--yellow);
+    width: 60%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  }
+  
+  .close-button {
+    color: var(--blue);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close-button:hover {
+    color: var(--yellow);
+  }
+
+  
+  
+  

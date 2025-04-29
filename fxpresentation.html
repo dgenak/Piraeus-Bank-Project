@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Report Editing for Presentation Use</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Report Editing for Presentation Use</h1>
+    <p>Select the key sections and whether you want to include graphs for your presentation report.</p>
+
+        <section>
+            <h2>Section Selection</h2>
+            <form id="report-form">
+            <h3>Select Report Sections:</h3>
+            <label><input type="checkbox" name="section" value="Selected Facts & Figures (SFFs)"> Selected Facts & Figures (SFFs)</label><br>
+            <label><input type="checkbox" name="section" value="FX Panorama"> FX Panorama</label><br>
+            <label><input type="checkbox" name="section" value="FX Fwd Customer Statistics"> FX Fwd Customer Statistics</label><br>
+            <label><input type="checkbox" name="section" value="Deal Size Analytics"> Deal Size Analytics</label><br>
+            <label><input type="checkbox" name="section" value="CCY Pair Analytics (Top 5)"> CCY Pair Analytics (Top 5)</label><br>
+            <label><input type="checkbox" name="section" value="Top 20 Clients"> Top 20 Clients</label><br>
+            <label><input type="checkbox" name="section" value="Top 20 Branches"> Top 20 Branches</label><br>
+            <label><input type="checkbox" name="section" value="Branch Activity by District"> Branch Activity by District</label><br>
+
+            <h3>Include Graphs?</h3>
+            <label><input type="radio" name="graphs" value="Yes" checked> Yes</label>
+            <label><input type="radio" name="graphs" value="No"> No</label>
+
+            <br><br>
+            <textarea id="custom-notes" placeholder="Write any custom notes for the presentation..."></textarea>
+            <br><br>
+
+            <button type="button" onclick="generateReport()">Generate Report</button>
+            <button type="button" onclick="downloadPDF()">Download as PDF</button>
+            <button type="button" onclick="openShareModal()">Share</button>
+            </form>
+        </section>
+
+        <div id="shareModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" onclick="closeShareModal()">&times;</span>
+                <h2>Team Sharing Details</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Head of Markets</td>
+                            <td>xxx@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>Deputy Head of Markets</td>
+                            <td>xxx@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>Head of Foreign Exchange</td>
+                            <td>xxx@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>Senior Manager of Foreign Exchange</td>
+                            <td>xxx@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>Product Developer</td>
+                            <td>xxx@gmail.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <section id="output" style="margin-top:30px;">
+            <!-- Generated report will appear here -->
+        </section>
+
+        <!-- jsPDF βιβλιοθήκη για export σε PDF -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+        <script>
+            function generateReport() {
+            var sections = document.querySelectorAll('input[name="section"]:checked');
+            var graphs = document.querySelector('input[name="graphs"]:checked').value;
+            var notes = document.getElementById('custom-notes').value;
+            var outputDiv = document.getElementById('output');
+
+            outputDiv.innerHTML = "<h2>Generated Presentation Report:</h2>";
+
+            if (sections.length > 0) {
+                outputDiv.innerHTML += "<h3>Selected Sections:</h3><ul>";
+                sections.forEach(function(item) {
+                    outputDiv.innerHTML += "<li>" + item.value + "</li>";
+                });
+                outputDiv.innerHTML += "</ul>";
+            }
+
+            outputDiv.innerHTML += "<h3>Include Graphs: " + graphs + "</h3>";
+
+            if (notes.trim() !== "") {
+                outputDiv.innerHTML += "<h3>Additional Notes:</h3><p>" + notes + "</p>";
+            }
+            }
+
+            async function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            doc.setFontSize(16);
+            doc.text("Presentation Report", 10, 20);
+
+            let y = 30;
+
+            const sections = document.querySelectorAll('input[name="section"]:checked');
+            const graphs = document.querySelector('input[name="graphs"]:checked').value;
+            const notes = document.getElementById('custom-notes').value;
+
+            if (sections.length > 0) {
+                doc.setFontSize(12);
+                doc.text("Selected Sections:", 10, y);
+                y += 10;
+                sections.forEach(function(item) {
+                    doc.text("- " + item.value, 15, y);
+                    y += 8;
+                });
+            }
+
+            y += 5;
+            doc.text("Include Graphs: " + graphs, 10, y);
+            y += 10;
+
+            if (notes.trim() !== "") {
+                doc.text("Additional Notes:", 10, y);
+                y += 10;
+                const splitNotes = doc.splitTextToSize(notes, 180);
+                doc.text(splitNotes, 10, y);
+            }
+
+            doc.save("presentation_report.pdf");
+        }
+        </script>
+
+        <script>
+            function openShareModal() {
+                document.getElementById("shareModal").style.display = "block";
+            }
+        
+            function closeShareModal() {
+                document.getElementById("shareModal").style.display = "none";
+            }
+        
+            window.onclick = function(event) {
+            const modal = document.getElementById("shareModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+            }
+        </script>
+    </body>
+</html>
