@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Αρχική - Τράπεζα Πειραιώς</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --blue: #00205B;
+      --yellow: #F9E400;
+      --gray-light: #f4f6f8;
+      --gray-medium: #ccd6dd;
+      --text-dark: #333333;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: var(--gray-light);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .content h1 {
+      text-align: center;
+    }
+    /* Κίτρινη κορυφαία μπάρα */
+    .top-bar {
+      background: var(--yellow);
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .top-bar .bank-logo {
+      width: 200px;
+      height: auto;
+    }
+    /* Μπλε υπο-μπάρα με επιλογές */
+    .subnav {
+      background: #02272e;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .subnav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      margin-right: 20px;
+      font-size: 16px;
+    }
+    /* Κουμπί sidebar κάτω από τη μπλε μπάρα */
+    .sidebar-toggle {
+      background: #02272e;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+      margin: 10px 20px;
+      align-self: flex-start;
+    }
+    /* Sidebar panel */
+    .sidebar {
+      position: fixed;
+      top: 300px;
+      left: -260px;
+      width: 260px;
+      background: white;
+      box-shadow: 2px 0 8px rgba(24, 5, 59, 0.15);
+      padding: 20px;
+      transition: left 0.3s ease;
+      overflow-y: auto;
+      z-index: 999;
+      height: auto;
+    }
+    .sidebar.active { left: 0; }
+    .sidebar ul { list-style: none; padding: 0; margin: 0; }
+    .sidebar ul li { margin-bottom: 15px; }
+    .sidebar ul li a { color: var(--blue); text-decoration: none; font-weight: 500; }
+    /* Κύριο περιεχόμενο */
+    .content {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <img src="file:///C:/Piraeus-Bank-Project/photos/newlogo.png" alt="Λογότυπο Πειραιώς" class="bank-logo">
+  </div>
+  <div class="subnav">
+    <a href="#">ΑΡΧΙΚΗ</a>
+  </div>
+  <button id="sidebarToggle" class="sidebar-toggle">☰</button>
+  <div id="sidebar" class="sidebar">
+    <ul>
+      <li><a href="#">Parameter Selection Process for FX</a></li>
+      <li><a href="#">FX Transaction Reporting for Management</a></li>
+      <li><a href="#">Report Validation and Approval Process</a></li>
+      <li><a href="#">Live FX Transaction Tracking and Strategy Compliance</a></li>
+      <li><a href="#">Report Editing for Presentation Use</a></li>
+    </ul>
+  </div>
+  <div class="content">
+    <h1>Καλώς ήρθατε στην Αρχική Σελίδα</h1>
+  </div>
+  <script>
+    // Toggle εμφάνισης sidebar
+    document.getElementById('sidebarToggle').addEventListener('click', function() {
+      document.getElementById('sidebar').classList.toggle('active');
+    });
+
+    // Όταν πατάμε επιλογή από sidebar, αλλάζει το h1 στο ίδιο παράθυρο
+    function showView(e) {
+      e.preventDefault();
+      const linkText = e.currentTarget.textContent.trim();
+      document.querySelector('.content h1').textContent = linkText;
+    }
+
+    document.querySelectorAll('.sidebar ul li a').forEach(link => {
+      link.addEventListener('click', showView);
+    });
+
+    // Όταν πατάμε το ΑΡΧΙΚΗ, επιστροφή στην αρχική
+    document.querySelector('.subnav a').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector('.content h1').textContent = 'Καλώς ήρθατε στην Αρχική Σελίδα';
+    });
+  </script>
+</body>
+</html>
+

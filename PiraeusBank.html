@@ -1,63 +1,148 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Σύνδεση</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Σύνδεση - Τράπεζα Πειραιώς</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <style>
+    /* Brand Colors */
+    :root {
+      --blue: #00205B;
+      --yellow: #FFC700;
+      --gray-light: #f4f6f8;
+      --gray-medium: #ccd6dd;
+      --text-dark: #333333;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: var(--yellow);
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .login-card {
+      background: #ffffff;
+      width: 360px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .login-card .header {
+      background: var(--yellow);
+      padding: 20px;
+      text-align: center;
+    }
+    .login-card .header span {
+      display: block;
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 18px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .bank-logo {
+      width: 100px;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+    .login-card .content {
+      padding: 30px;
+      text-align: center;
+    }
+    .login-card .content h2 {
+      margin: 0 0 20px;
+      color: var(--blue);
+      font-weight: 700;
+      font-size: 24px;
+    }
+    .login-card .content .profile-pic {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 20px;
+      display: block;
+      border: 2px solid var(--blue);
+    }
+    .login-card .content input[type="text"],
+    .login-card .content input[type="password"] {
+      width: 100%;
+      padding: 14px 16px;
+      margin: 12px 0;
+      border: 1px solid var(--gray-medium);
+      border-radius: 8px;
+      font-size: 15px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .login-card .content input::placeholder {
+      color: var(--gray-medium);
+    }
+    .login-card .content input:focus {
+      border-color: var(--yellow);
+      box-shadow: 0 0 5px rgba(255, 199, 0, 0.5);
+      outline: none;
+    }
+    .login-card .content button {
+      width: 100%;
+      padding: 14px;
+      background-color: var(--yellow);
+      color: var(--text-dark);
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+    .login-card .content button:hover {
+      background-color: #e0b000;
+    }
+    .login-card .content .footer {
+      margin-top: 18px;
+      font-size: 14px;
+      color: var(--text-dark);
+    }
+    .login-card .content .footer a {
+      color: var(--blue);
+      text-decoration: none;
+      margin: 0 6px;
+    }
+    .login-card .content .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+      <script>
+        function openHome() {
+          window.location.href = 'homepage.html';
         }
-        .login-container {
-            width: 300px;
-            padding: 20px;
-            background: #fff;
-            margin: 100px auto;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .login-container h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .login-container label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .login-container input[type="text"],
-        .login-container input[type="password"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-        .login-container button {
-            width: 100%;
-            padding: 10px;
-            background-color: #4285f4;
-            color: white;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-        .login-container button:hover {
-            background-color: #357ae8;
-        }
-    </style>
+      </script>  
 </head>
 <body>
-    <div class="login-container">
-        <h2>Σύνδεση</h2>
-        <form action="#" method="post">
-            <label for="username">Όνομα χρήστη</label>
-            <input type="text" id="username" name="username" placeholder="Εισάγετε το όνομα χρήστη" required>
-            <label for="password">Κωδικός</label>
-            <input type="password" id="password" name="password" placeholder="Εισάγετε τον κωδικό" required>
-            <button type="submit">Σύνδεση</button>
-        </form>
+  <div class="login-card">
+    <div class="header">
+      <span>ΤΡΑΠΕΖΑ ΠΕΙΡΑΙΩΣ</span>
+      <img src="file:///C:/Piraeus-Bank-Project/photos/logo.png" alt="Λογότυπο Πειραιώς" class="bank-logo">
     </div>
+    <div class="content">
+      <h2>Καλώς ήρθατε</h2>
+      <form action="#" method="post">
+        <input type="text" id="username" name="username" placeholder="Όνομα χρήστη" required>
+        <input type="password" id="password" name="password" placeholder="Κωδικός πρόσβασης" required>
+        <button type="submit">Σύνδεση</button>
+      </form>
+      <div class="footer">
+        <a href="#">Ξεχάσατε τον κωδικό;</a>|
+        <a href="#">Εγγραφή</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
