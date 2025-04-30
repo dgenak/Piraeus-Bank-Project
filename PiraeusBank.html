@@ -7,10 +7,9 @@
   <title>Σύνδεση - Τράπεζα Πειραιώς</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
   <style>
-    /* Brand Colors */
     :root {
       --blue: #00205B;
-      --yellow: #FFC700;
+      --yellow: #F9E400;
       --gray-light: #f4f6f8;
       --gray-medium: #ccd6dd;
       --text-dark: #333333;
@@ -119,24 +118,24 @@
       text-decoration: underline;
     }
   </style>
-      <script>
-        function openHome() {
-          window.location.href = 'homepage.html';
-        }
-      </script>  
+  <script>
+    function openHome() {
+      window.location.href = 'homepage.html';
+    }
+  </script>  
 </head>
 <body>
   <div class="login-card">
     <div class="header">
-      <span>ΤΡΑΠΕΖΑ ΠΕΙΡΑΙΩΣ</span>
-      <img src="file:///C:/Piraeus-Bank-Project/photos/logo.png" alt="Λογότυπο Πειραιώς" class="bank-logo">
+      <img src="file:///C:/Piraeus-Bank-Project/photos/newlogo.png" alt="Λογότυπο Πειραιώς" class="bank-logo">
     </div>
     <div class="content">
       <h2>Καλώς ήρθατε</h2>
       <form action="#" method="post">
         <input type="text" id="username" name="username" placeholder="Όνομα χρήστη" required>
         <input type="password" id="password" name="password" placeholder="Κωδικός πρόσβασης" required>
-        <button type="submit">Σύνδεση</button>
+        <!-- Μόνο εδώ άλλαξε: type σε button και onclick για άμεση ανακατεύθυνση -->
+        <button type="button" onclick="openHome()">Σύνδεση</button>
       </form>
       <div class="footer">
         <a href="#">Ξεχάσατε τον κωδικό;</a>|
