@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styleValidation.css">
+  <title> Report Validation and Approval Process</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1> Report Validation and Approval Process</h1>
+    </header>
+
+    <section class="section">
+      <h2>Validation and Approval Process</h2>
+      <p>Use this form to validate and approve the FX transaction reports. Please ensure that all necessary checks are performed before submitting the report for final approval.</p>
+
+      <h2>Validation Steps</h2>
+      <ol>
+        <li>Check for data accuracy and completeness.</li>
+        <li>Verify that all transactions are properly categorized.</li>
+        <li>Ensure compliance with internal policies and regulations.</li>
+        <li>Confirm that all necessary approvals have been obtained.</li>
+      </ol>
+
+      <section class="details">
+        <h2>Report Details</h2>
+      
+        <fieldset>
+          <legend>Data Accuracy</legend>
+          <p>Is all information up to date?</p>
+          <label for="info-updated-yes">
+            <input type="radio" id="info-updated-yes" name="info-updated" value="yes" checked>
+            Yes
+          </label><br>
+          <label for="info-updated-no">
+            <input type="radio" id="info-updated-no" name="info-updated" value="no">
+            No
+          </label>
+        </fieldset><br>
+      
+        <fieldset>
+          <legend>Analytics Quality</legend>
+          <p>Are the analytics sufficiently detailed?</p>
+          <label for="analytics-enough-yes">
+            <input type="radio" id="analytics-enough-yes" name="analytics-enough" value="yes" checked>
+            Yes
+          </label><br>
+          <label for="analytics-enough-no">
+            <input type="radio" id="analytics-enough-no" name="analytics-enough" value="no">
+            No
+          </label>
+        </fieldset><br>
+      
+        <fieldset>
+          <legend>Clarity of Reports</legend>
+          <p>Are the reports clear and comprehensible?</p>
+          <label for="reports-clear-yes">
+            <input type="radio" id="reports-clear-yes" name="reports-clear" value="yes" checked>
+            Yes
+          </label><br>
+          <label for="reports-clear-no">
+            <input type="radio" id="reports-clear-no" name="reports-clear" value="no">
+            No
+          </label>
+        </fieldset><br>
+      
+        <fieldset>
+          <legend>Compliance with Standards</legend>
+          <p>Are the reports up to the company standards?</p>
+          <label for="reports-understandable-yes">
+            <input type="radio" id="reports-understandable-yes" name="reports-understandable" value="yes" checked>
+            Yes
+          </label><br>
+          <label for="reports-understandable-no">
+            <input type="radio" id="reports-understandable-no" name="reports-understandable" value="no">
+            No
+          </label>
+        </fieldset>
+      </section>
+      
+
+      <p>Suggestions for Improvement</p>
+      <textarea placeholder="Feedback..."></textarea>
+      <button type="submit">Submit feedback to FX team</button>
+
+      <h2>Finalize Report</h2>
+      <p>Select the final decision:</p>
+      <select id="approval-status" name="approval-status">
+        <option value="pending">Pending – Feedback Given</option>
+        <option value="approved">Approved</option>
+        <option value="rejected">Rejected</option>
+      </select>
+
+      <div class="actions">
+        <button type="submit">Submit Decision</button>
+        <button type="button" onclick="window.location.href='Reporting.html'">Back to Reporting</button>
+      </div>
+    </section>
+</body>
+</html>

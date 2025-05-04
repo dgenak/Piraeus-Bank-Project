@@ -1,0 +1,85 @@
+/* Basic styling for the page */
+body {
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+    background-color: #f4f6f8;
+    color: #333;
+    margin: 0;
+  }
+
+  /* Brand Colors */
+:root {
+    --blue: #00205B;
+    --yellow: #FFC700;
+    --gray-light: #f4f6f8;
+    --gray-medium: #ccd6dd;
+    --text-dark: #333333;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    color: var(--blue);
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    color: var(--blue);
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    color: black;
+    margin-bottom: 8px;
+  }
+  
+  h4 {
+    font-size: 1.1rem;
+    color: black;
+    margin-bottom: 8px;
+  }
+
+  textarea {
+    width: 100%; /* Make the textarea full width */
+    height: 150px; /* Set the height of the textarea */
+    padding: 15px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    resize: vertical; /* Allow vertical resizing only */
+    transition: border-color 0.3s ease; /* Smooth transition for focus state */
+  }
+  
+  textarea:focus {
+    border-color: var(--blue); /* Change border color when focused */
+    outline: none; /* Remove default outline */
+  }
+
+  button {
+    padding: 12px 20px; /* Add padding for a larger button */
+    background-color: var(--yellow); /* Yellow background color */
+    color: white; /* White text */
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+    margin-top: 20px; /* Add spacing between the button and textarea */
+  }
+  
+  button:hover {
+    background-color: var(--blue); /* Change to blue on hover */
+  }

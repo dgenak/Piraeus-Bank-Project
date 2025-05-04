@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styleReport.css">
+  <title> FX Transaction Reporting for Management</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>FX Transaction Reporting for Management</h1>
+    </header>
+
+    <section class="section">
+        <h2>Report FX Transactions</h2>
+        <p>Use this form to report any foreign exchange (FX) transactions that require management review. If you have observed any unusual or irregular activity in FX transactions, please provide detailed information below so we can investigate further.</p>
+
+        <button type="submit">Monitor FX Transactions</button>
+
+        <h2> Have you noticed any abnormal transactions?</h2>
+        <label for="transactions">
+            <input type="radio" id="transactions" name="transaction-option" value="yes" checked>
+            Yes, I have noticed abnormal transactions.
+        </label>
+        <label for="transactions">
+            <input type="radio" id="transactions" name="transaction-option" value="no">
+            No, I have not noticed any abnormal transactions.
+        </label><br><br>
+
+        <fieldset>
+            <legend>In which part of the report did you notice the abnormal transactions?</legend>
+            <label><input type="checkbox" name="report-section" value="Selected Facts & Figures (SFFs)"> Selected Facts & Figures (SFFs)</label><br>
+            <label><input type="checkbox" name="report-section" value="Client Segment Analytics"> Client Segment Analytics</label><br>
+            <label><input type="checkbox" name="report-section" value="Deal Size Analytics"> Deal Size Analytics</label><br>
+            <label><input type="checkbox" name="report-section" value="CCY Pair Analytics"> CCY Pair Analytics</label><br>
+            <label><input type="checkbox" name="report-section" value="FX Panorama"> FX Panorama</label><br>
+            <label><input type="checkbox" name="report-section" value="Top 20 Clients"> Top 20 Clients</label><br>
+            <label><input type="checkbox" name="report-section" value="Top 20 Branches"> Top 20 Branches</label><br>
+            <label><input type="checkbox" name="report-section" value="Branch Activity by District"> Branch Activity by District</label><br>
+            <label><input type="checkbox" name="report-section" value="FX Fwd Customer Statistics"> FX Fwd Customer Statistics</label><br>
+        </fieldset>
+    </section>
+
+    <section>
+        <h2>Provide Details of Abnormal Transactions</h2>
+        <p>If you selected "Yes," please describe the nature of the abnormal transactions. Include any relevant details, such as transaction dates, amounts, and involved parties. Your observations are crucial for management to assess and take action.</p>
+        <textarea placeholder="Provide transaction details..."></textarea>
+        <button type="submit">Submit Report to the FX team</button>
+    </section>
+</div>
