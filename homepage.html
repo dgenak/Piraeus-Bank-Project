@@ -49,18 +49,6 @@
       margin-right: 20px;
       font-size: 16px;
     }
-    .sidebar-toggle {
-      background: #02272e;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 20px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 500;
-      margin: 10px 20px;
-      align-self: flex-start;
-    }
     .sidebar {
       position: fixed;
       top: 300px;
@@ -74,15 +62,59 @@
       z-index: 999;
       height: auto;
     }
-    .sidebar.active { left: 0; }
-    .sidebar ul { list-style: none; padding: 0; margin: 0; }
-    .sidebar ul li { margin-bottom: 15px; }
-    .sidebar ul li a { color: var(--blue); text-decoration: none; font-weight: 500; }
+
+    .sidebar-toggle {
+    background: #02272e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    margin: 10px 20px;
+    align-self: flex-start;
+  }
+
+    .sidebar.active {
+      left: 0;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul li a {
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 10px 16px;
+      display: block;
+      border-radius: 4px;
+      border: 2px solid transparent; /* Reserve space for border */
+      transition: all 0.3s ease;
+    }
+
+    /* Safe hover effect */
+    .sidebar ul li a:hover {
+      background-color: var(--gray-light);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      transform: translateX(4px);
+      border-color: rgba(0,0,0,0.05); /* optional subtle border */
+    }
+
     .content {
       flex: 1;
       padding: 20px;
       overflow-y: auto;
     }
+
     .hero {
       background: url('photos/hero-bg.jpg') center/cover no-repeat;
       height: 300px;
@@ -205,7 +237,7 @@
 <body>
   <div class="top-bar">
     <img src="images/Piraeus-Logo-New.png" alt="Piraeus Bank Logo" class="bank-logo">
-a  </div>
+  </div>
   <div class="subnav">
     <a href="#" id="homeLink">HOME</a>
     <a href="#" id="notificationsLink">NOTIFICATIONS</a>
