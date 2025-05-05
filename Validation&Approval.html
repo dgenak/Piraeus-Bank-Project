@@ -20,7 +20,6 @@
       display: flex;
       flex-direction: column;
       height: 100vh;
-      overflow: hidden;
     }
     .top-bar {
       background: var(--yellow);
@@ -292,8 +291,11 @@ a  </div>
           </label>
         </fieldset>
       </section>
-      
-
+      <script>
+        document.getElementById('sidebarToggle').addEventListener('click', function () {
+          document.getElementById('sidebar').classList.toggle('active');
+        });
+      </script>
       <p>Suggestions for Improvement</p>
       <textarea placeholder="Feedback..."></textarea>
       <button type="submit">Submit feedback to FX team</button>
