@@ -253,11 +253,16 @@ a  </div>
             <label><input type="checkbox" name="report-section" value="FX Fwd Customer Statistics"> FX Fwd Customer Statistics</label><br>
         </fieldset>
     </section>
-
+    <script>
+          document.getElementById('sidebarToggle').addEventListener('click', function () {
+            document.getElementById('sidebar').classList.toggle('active');
+          });
+    </script>
     <section>
         <h2>Provide Details of Abnormal Transactions</h2>
         <p>If you selected "Yes," please describe the nature of the abnormal transactions. Include any relevant details, such as transaction dates, amounts, and involved parties. Your observations are crucial for management to assess and take action.</p>
         <textarea placeholder="Provide transaction details..."></textarea>
         <button type="submit">Submit Report to the FX team</button>
     </section>
+    
 </div>
