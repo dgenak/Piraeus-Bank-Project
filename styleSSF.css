@@ -331,27 +331,27 @@ select, input[type="date"], input[type="radio"] {
 }
 
 .buttons {
-  display: flex; /* Use Flexbox to align items horizontally */
-  justify-content: center; /* Center the buttons horizontally */
-  gap: 15px; /* Add space between buttons */
-  margin-top: 30px; /* Space above the buttons */
+  display: flex; 
+  justify-content: center; 
+  gap: 15px; 
+  margin-top: 30px;
 }
 
 button {
-  padding: 12px 20px; /* Add padding for a larger button */
-  background-color: var(--yellow); /* Yellow background color */
-  color: white; /* White text */
+  padding: 12px 20px; 
+  background-color: var(--yellow);
+  color: white;
   font-size: 1rem;
   font-weight: bold;
   border: none;
-  border-radius: 5px; /* Rounded corners */
+  border-radius: 5px; 
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Smooth background color transition */
-  margin-top: 20px; /* Add spacing between the button and textarea */
+  transition: background-color 0.3s ease; 
+  margin-top: 20px; 
 }
 
 button:hover {
-  background-color: var(--blue); /* Change to blue on hover */
+  background-color: var(--blue); 
 }
 
 html {
