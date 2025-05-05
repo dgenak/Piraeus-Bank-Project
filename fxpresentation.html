@@ -78,8 +78,11 @@
     .sidebar ul li a { color: var(--blue); text-decoration: none; font-weight: 500; }
     .content {
       flex: 1;
+      max-width: 1000px;
+      margin: 0 auto;
       padding: 20px;
       overflow-y: auto;
+      align-self: center;
     }
     .hero {
       background: url('photos/hero-bg.jpg') center/cover no-repeat;
@@ -200,52 +203,58 @@
     }
   </style>
 </head>
-<body>    
-    <div class="top-bar">
-        <img src="images/Piraeus-Logo-New.png" alt="Piraeus Bank Logo" class="bank-logo">
-    a  </div>
-      <div class="subnav">
-        <a href="homepage.html" id="homeLink">HOME</a>
-      </div>
-      <button id="sidebarToggle" class="sidebar-toggle">☰</button>
-      <div id="sidebar" class="sidebar">
-        <ul>
+<body>
+  <div class="top-bar">
+    <img src="images/Piraeus-Logo-New.png" alt="Piraeus Bank Logo" class="bank-logo">
+  </div>
+
+  <div class="subnav">
+      <a href="homepage.html" id="homeLink">HOME</a>
+  </div>
+
+  <button id="sidebarToggle" class="sidebar-toggle">☰</button>
+  <div id="sidebar" class="sidebar">
+      <ul>
           <li><a href="ParameterSelection.html">Parameter Selection Process for FX</a></li>
           <li><a href="Reporting.html">FX Transaction Reporting for Management</a></li>
           <li><a href="Validation&Approval.html">Report Validation and Approval Process</a></li>
           <li><a href="fxlivetracking.html">Live FX Transaction Tracking and Strategy Compliance</a></li>
           <li><a href="fxpresentation.html">Report Editing for Presentation Use</a></li>
-        </ul>
-      </div>
-    <h1>Report Editing for Presentation Use</h1>
-    <p>Select the key sections and whether you want to include graphs for your presentation report.</p>
+      </ul>
+  </div>
 
-        <section>
-            <h2>Section Selection</h2>
-            <form id="report-form">
-            <h3>Select Report Sections:</h3>
-            <label><input type="checkbox" name="section" value="Selected Facts & Figures (SFFs)"> Selected Facts & Figures (SFFs)</label><br>
-            <label><input type="checkbox" name="section" value="FX Panorama"> FX Panorama</label><br>
-            <label><input type="checkbox" name="section" value="FX Fwd Customer Statistics"> FX Fwd Customer Statistics</label><br>
-            <label><input type="checkbox" name="section" value="Deal Size Analytics"> Deal Size Analytics</label><br>
-            <label><input type="checkbox" name="section" value="CCY Pair Analytics (Top 5)"> CCY Pair Analytics (Top 5)</label><br>
-            <label><input type="checkbox" name="section" value="Top 20 Clients"> Top 20 Clients</label><br>
-            <label><input type="checkbox" name="section" value="Top 20 Branches"> Top 20 Branches</label><br>
-            <label><input type="checkbox" name="section" value="Branch Activity by District"> Branch Activity by District</label><br>
+  <div class="content">
+      <h1>Report Editing for Presentation Use</h1>
+      <p>Select the key sections and whether you want to include graphs for your presentation report.</p>
 
-            <h3>Include Graphs?</h3>
-            <label><input type="radio" name="graphs" value="Yes" checked> Yes</label>
-            <label><input type="radio" name="graphs" value="No"> No</label>
+      <section>
+          <h2>Section Selection</h2>
+          <form id="report-form">
+              <h3>Select Report Sections:</h3>
+              <label><input type="checkbox" name="section" value="Selected Facts & Figures (SFFs)"> Selected Facts & Figures (SFFs)</label><br>
+              <label><input type="checkbox" name="section" value="FX Panorama"> FX Panorama</label><br>
+              <label><input type="checkbox" name="section" value="FX Fwd Customer Statistics"> FX Fwd Customer Statistics</label><br>
+              <label><input type="checkbox" name="section" value="Deal Size Analytics"> Deal Size Analytics</label><br>
+              <label><input type="checkbox" name="section" value="CCY Pair Analytics (Top 5)"> CCY Pair Analytics (Top 5)</label><br>
+              <label><input type="checkbox" name="section" value="Top 20 Clients"> Top 20 Clients</label><br>
+              <label><input type="checkbox" name="section" value="Top 20 Branches"> Top 20 Branches</label><br>
+              <label><input type="checkbox" name="section" value="Branch Activity by District"> Branch Activity by District</label><br>
 
-            <br><br>
-            <textarea id="custom-notes" placeholder="Write any custom notes for the presentation..."></textarea>
-            <br><br>
+              <h3>Include Graphs?</h3>
+              <label><input type="radio" name="graphs" value="Yes" checked> Yes</label>
+              <label><input type="radio" name="graphs" value="No"> No</label>
 
-            <button type="button" onclick="generateReport()">Generate Report</button>
-            <button type="button" onclick="downloadPDF()">Download as PDF</button>
-            <button type="button" onclick="openShareModal()">Share</button>
-            </form>
-        </section>
+              <br><br>
+              <textarea id="custom-notes" placeholder="Write any custom notes for the presentation..."></textarea>
+              <br><br>
+
+              <button type="button" onclick="generateReport()">Generate Report</button>
+              <button type="button" onclick="downloadPDF()">Download as PDF</button>
+              <button type="button" onclick="openShareModal()">Share</button>
+          </form>
+      </section>
+  </div>
+
 
         <div id="shareModal" class="modal">
             <div class="modal-content">
